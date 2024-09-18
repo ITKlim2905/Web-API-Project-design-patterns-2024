@@ -33,12 +33,12 @@ public class OrderController : ControllerBase
         }
     }
 
-    [HttpGet("getByID/{OrderID}", Name = "GetOrderByID")]
-    public async Task<ActionResult<TransactionDto>> GetOrderById([FromRoute] string OrderID)
+    [HttpGet("getById/{OrderId}", Name = "GetOrderById")]
+    public async Task<ActionResult<TransactionDto>> GetOrderById([FromRoute] string OrderId)
     {
         try
         {
-            var result = await _orderService.Get(OrderID);
+            var result = await _orderService.Get(OrderId);
             return Ok(result);
         }
         catch (Exception e)
@@ -52,7 +52,7 @@ public class OrderController : ControllerBase
     public async Task<ActionResult> Add([FromBody] CreateOrderRequest request)
     {
         var entity = new OrderDto(
-            orderID: Guid.NewGuid().ToString(),
+            orderId: Guid.NewGuid().ToString(),
             orderType: request.OrderType,
             dishType: request.DishType,
             dishName: request.DishName,
@@ -61,12 +61,12 @@ public class OrderController : ControllerBase
         try
         {
             await _orderService.Add(entity);
-            _logger.LogInformation($"Order {entity.OrderID} successfully created");
+            _logger.LogInformation($"Order {entity.OrderId} successfully created");
             return Ok();
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Failed to create order with ID = {entity.OrderID}");
+            _logger.LogError(ex, $"Failed to create order with ID = {entity.OrderId}");
             return BadRequest();
         }
     }
@@ -75,7 +75,7 @@ public class OrderController : ControllerBase
     public async Task<ActionResult> Update([FromBody] UpdateOrderRequest request)
     {
         var entity = new OrderDto(
-            orderID: Guid.NewGuid().ToString(),
+            orderId: Guid.NewGuid().ToString(),
             orderType: request.OrderType,
             dishType: request.DishType,
             dishName: request.DishName,
@@ -85,28 +85,28 @@ public class OrderController : ControllerBase
         try
         {
             await _orderService.Update(entity);
-            _logger.LogInformation($"Order {entity.OrderID} successfully updated");
+            _logger.LogInformation($"Order {entity.OrderId} successfully updated");
             return Ok();
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Failed to update order with ID = {entity.OrderID}");
+            _logger.LogError(ex, $"Failed to update order with ID = {entity.OrderId}");
             return BadRequest();
         }
     }
 
     [HttpDelete]
-    public async Task<ActionResult> Remove(string OrderID)
+    public async Task<ActionResult> Remove(string OrderId)
     {
         try
         {
-            await _orderService.Remove(OrderID);
-            _logger.LogInformation($"Order {OrderID} successfully deleted");
+            await _orderService.Remove(OrderId);
+            _logger.LogInformation($"Order {OrderId} successfully deleted");
             return Ok();
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Failed to delete order with ID = {OrderID}");
+            _logger.LogError(ex, $"Failed to delete order with ID = {OrderId}");
             return BadRequest();
         }
     }

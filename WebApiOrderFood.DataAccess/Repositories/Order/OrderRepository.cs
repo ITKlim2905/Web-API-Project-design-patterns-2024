@@ -14,8 +14,8 @@ public class OrderRepository : IOrderRepository
     public Task<ReadOnlyCollection<OrderEntity>> Get() =>
         Task.FromResult(_context.Orders.ToList().AsReadOnly());
 
-    public Task<OrderEntity?> Get(string OrderID) =>
-        Task.FromResult(_context.Orders.FirstOrDefault(e => e.OrderID == OrderID));
+    public Task<OrderEntity?> Get(string OrderId) =>
+        Task.FromResult(_context.Orders.FirstOrDefault(e => e.OrderId == OrderId));
 
     public Task<ReadOnlyCollection<OrderEntity>> Get(Func<OrderEntity, bool> predicate)
     {
@@ -32,7 +32,7 @@ public class OrderRepository : IOrderRepository
     {
         foreach (var e in _context.Orders)
         {
-            if (e.OrderID == entity.OrderID)
+            if (e.OrderId == entity.OrderId)
             {
                 e.OrderType = entity.OrderType;
                 e.DishType = entity.DishType;
@@ -44,9 +44,9 @@ public class OrderRepository : IOrderRepository
         return Task.CompletedTask;
     }
 
-    public Task Delete(string OrderID)
+    public Task Delete(string OrderId)
     {
-        var entity = _context.Orders.FirstOrDefault(e => e.OrderID == OrderID);
+        var entity = _context.Orders.FirstOrDefault(e => e.OrderId == OrderId);
         if (entity != null)
         {
             _context.Orders.Remove(entity);

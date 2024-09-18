@@ -23,16 +23,16 @@ public class TransactionService : ITransactionService
             return new List<TransactionDto>();
 
         return transactions.Select(e => new TransactionDto(
-                e.TransactionID, e.OrderID, e.TransactionType, e.Amount, e.DateTime)).ToList().AsReadOnly();
+                e.TransactionId, e.OrderId, e.TransactionType, e.Amount, e.DateTime)).ToList().AsReadOnly();
     }
 
-    public async Task<TransactionDto> Get(string transactionID)
+    public async Task<TransactionDto> Get(string transactionId)
     {
-        var transaction = await _transactionRepository.Get(transactionID);
+        var transaction = await _transactionRepository.Get(transactionId);
         if (transaction == null)
             return TransactionDto.Default;
 
-        return new TransactionDto(transaction.TransactionID, transaction.OrderID,
+        return new TransactionDto(transaction.TransactionId, transaction.OrderId,
             transaction.TransactionType, transaction.Amount, transaction.DateTime);
     }
 
@@ -44,22 +44,22 @@ public class TransactionService : ITransactionService
             return new List<TransactionDto>();
 
         return transactions.Select(e => new TransactionDto(
-            e.TransactionID, e.OrderID, e.TransactionType, e.Amount, e.DateTime)).ToList().AsReadOnly();
+            e.TransactionId, e.OrderId, e.TransactionType, e.Amount, e.DateTime)).ToList().AsReadOnly();
     }
 
     public async Task Create(TransactionDto transaction)
     {
         if (transaction != TransactionDto.Default)
         {
-            var order = await _orderRepository.Get(transaction.OrderID);
+            var order = await _orderRepository.Get(transaction.OrderId);
 
             if (order == null)
-                throw new ArgumentNullException($"Account not found by id={transaction.OrderID}");
+                throw new ArgumentNullException($"Account not found by id={transaction.OrderId}");
 
             await _transactionRepository.Create(new TransactionEntity
             {
-                TransactionID = transaction.TransactionID,
-                OrderID = transaction.OrderID,
+                TransactionId = transaction.TransactionId,
+                OrderId = transaction.OrderId,
                 TransactionType = transaction.Type,
                 Amount = transaction.Amount,
                 DateTime = transaction.OrderTime
@@ -79,11 +79,11 @@ public class TransactionService : ITransactionService
         }
     }
 
-    public async Task Remove(string transactionID)
+    public async Task Remove(string transactionId)
     {
-        if (string.IsNullOrEmpty(transactionID))
+        if (string.IsNullOrEmpty(transactionId))
             throw new ArgumentNullException();
 
-        await _transactionRepository.Delete(transactionID);
+        await _transactionRepository.Delete(transactionId);
     }
 }

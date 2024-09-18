@@ -34,12 +34,12 @@ public class TransactionController : ControllerBase
         }
     }
 
-    [HttpGet("getById/{TransactionID}", Name = "GetTransactionById")]
-    public async Task<ActionResult<TransactionDto>> GetTransactionById([FromRoute] string TransactionID)
+    [HttpGet("getById/{TransactionId}", Name = "GetTransactionById")]
+    public async Task<ActionResult<TransactionDto>> GetTransactionById([FromRoute] string TransactionId)
     {
         try
         {
-            var result = await _transactionService.Get(TransactionID);
+            var result = await _transactionService.Get(TransactionId);
             return Ok(result);
         }
         catch (Exception e)
@@ -67,34 +67,34 @@ public class TransactionController : ControllerBase
     [HttpPost("addTransaction", Name = "AddTransaction")]
     public async Task<ActionResult> Add([FromBody] CreateTransactionRequest request)
     {
-        var entity = new TransactionDto(Guid.NewGuid().ToString(), request.OrderID,
+        var entity = new TransactionDto(Guid.NewGuid().ToString(), request.OrderId,
             request.TransactionType, request.Amount, DateTime.UtcNow);
         try
         {
 
             await _transactionService.Create(entity);
-            _logger.LogInformation($"Transaction {entity.TransactionID} successfully created");
+            _logger.LogInformation($"Transaction {entity.TransactionId} successfully created");
             return Ok();
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Failed to create transaction with ID = {entity.TransactionID}");
+            _logger.LogError(ex, $"Failed to create transaction with Id = {entity.TransactionId}");
             return BadRequest();
         }
     }
 
     [HttpDelete]
-    public async Task<ActionResult> Remove(string TransactionID)
+    public async Task<ActionResult> Remove(string TransactionId)
     {
         try
         {
-            await _transactionService.Remove(TransactionID);
-            _logger.LogInformation($"Transaction {TransactionID} successfully deleted");
+            await _transactionService.Remove(TransactionId);
+            _logger.LogInformation($"Transaction {TransactionId} successfully deleted");
             return Ok();
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, $"Failed to delete transaction with ID = {TransactionID}");
+            _logger.LogError(ex, $"Failed to delete transaction with ID = {TransactionId}");
             return BadRequest();
         }
     }

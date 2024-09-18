@@ -13,7 +13,7 @@ public class OrderContext
         {
             new OrderEntity
             {
-                OrderID = "1",
+                OrderId = "1",
                 OrderType = OrderType.Delivery,
                 DishType = DishType.FastFood,
                 DishName = "Pizza",
@@ -22,7 +22,7 @@ public class OrderContext
             };
             new OrderEntity
             {
-                OrderID = "2",
+                OrderId = "2",
                 OrderType = OrderType.InTheEstablishment,
                 DishType = DishType.First,
                 DishName = "Solyanka",
@@ -31,7 +31,7 @@ public class OrderContext
             };
             new OrderEntity
             {
-                OrderID = "3",
+                OrderId = "3",
                 OrderType = OrderType.ForTakeaway,
                 DishType = DishType.Drink,
                 DishName = "Coffee",
@@ -44,24 +44,24 @@ public class OrderContext
         {
             new TransactionEntity
             {
-                TransactionID = "1",
-                OrderID = "1",
+                TransactionId = "1",
+                OrderId = "1",
                 TransactionType = TransactionType.Successfully,
                 Amount = 1,
                 DateTime = DateTime.Now
             };
             new TransactionEntity
             {
-                TransactionID = "2",
-                OrderID = "2",
+                TransactionId = "2",
+                OrderId = "2",
                 TransactionType = TransactionType.Successfully,
                 Amount = 1,
                 DateTime = DateTime.Now
             };
             new TransactionEntity
             {
-                TransactionID = "3",
-                OrderID = "3",
+                TransactionId = "3",
+                OrderId = "3",
                 TransactionType = TransactionType.Successfully,
                 Amount = 1,
                 DateTime = DateTime.Now

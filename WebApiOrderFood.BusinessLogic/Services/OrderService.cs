@@ -21,7 +21,7 @@ public class OrderService : IOrderService
             return new List<OrderDto>();
 
         return orders.Select(e => new OrderDto(
-            orderID: e.OrderID,
+            orderId: e.OrderId,
             orderType: e.OrderType,
             dishType: e.DishType,
             dishName: e.DishName,
@@ -29,13 +29,13 @@ public class OrderService : IOrderService
             orderTime: e.OrderTime)).ToList().AsReadOnly();
     }
 
-    public async Task<OrderDto> Get(string orderID)
+    public async Task<OrderDto> Get(string orderId)
     {
-        var order = await _orderRepository.Get(orderID);
+        var order = await _orderRepository.Get(orderId);
         if (order == null)
             return OrderDto.Default;
         return new OrderDto(
-            orderID: order.OrderID,
+            orderId: order.OrderId,
             orderType: order.OrderType,
             dishType: order.DishType,
             dishName: order.DishName,
@@ -50,7 +50,7 @@ public class OrderService : IOrderService
 
         await _orderRepository.Create(new OrderEntity
         {
-            OrderID = order.OrderID,
+            OrderId = order.OrderId,
             OrderType = order.OrderType,
             DishType = order.DishType,
             DishName = order.DishName,
@@ -66,7 +66,7 @@ public class OrderService : IOrderService
 
         await _orderRepository.Update(new OrderEntity
         {
-            OrderID = order.OrderID,
+            OrderId = order.OrderId,
             OrderType = order.OrderType,
             DishType = order.DishType,
             DishName = order.DishName,
@@ -75,11 +75,11 @@ public class OrderService : IOrderService
         });
     }
 
-    public async Task Remove(string orderID)
+    public async Task Remove(string orderId)
     {
-        if (string.IsNullOrEmpty(orderID))
+        if (string.IsNullOrEmpty(orderId))
             throw new ArgumentNullException();
 
-        await _orderRepository.Delete(orderID);
+        await _orderRepository.Delete(orderId);
     }
 }

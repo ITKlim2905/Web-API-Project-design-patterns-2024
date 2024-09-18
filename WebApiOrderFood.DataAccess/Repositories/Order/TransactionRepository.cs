@@ -15,8 +15,8 @@ public class TransactionRepository : ITransactionRepository
     public Task<ReadOnlyCollection<TransactionEntity>> Get() =>
         Task.FromResult(_context.Transactions.ToList().AsReadOnly());
 
-    public Task<TransactionEntity?> Get(string TransactionID) =>
-        Task.FromResult(_context.Transactions.FirstOrDefault(e => e.TransactionID == TransactionID));
+    public Task<TransactionEntity?> Get(string TransactionId) =>
+        Task.FromResult(_context.Transactions.FirstOrDefault(e => e.TransactionId == TransactionId));
 
     public Task<ReadOnlyCollection<TransactionEntity>> Get(Func<TransactionEntity, bool> predicate)
     {
@@ -33,9 +33,9 @@ public class TransactionRepository : ITransactionRepository
     {
         foreach (var e in _context.Transactions)
         {
-            if (e.TransactionID == entity.TransactionID)
+            if (e.TransactionId == entity.TransactionId)
             {
-                e.OrderID = entity.OrderID;
+                e.OrderId = entity.OrderId;
                 e.TransactionType = entity.TransactionType;
                 e.Amount = entity.Amount;
                 e.DateTime = entity.DateTime;
@@ -44,9 +44,9 @@ public class TransactionRepository : ITransactionRepository
         return Task.CompletedTask;
     }
 
-    public Task Delete(string TransactionID)
+    public Task Delete(string TransactionId)
     {
-        var entity = _context.Transactions.FirstOrDefault(e => e.TransactionID == TransactionID);
+        var entity = _context.Transactions.FirstOrDefault(e => e.TransactionId == TransactionId);
         if (entity != null)
         {
             _context.Transactions.Remove(entity);

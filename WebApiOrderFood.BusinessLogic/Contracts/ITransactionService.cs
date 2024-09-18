@@ -5,8 +5,8 @@ namespace WebApiOrderFood.BusinessLogic.Contracts;
 public interface ITransactionService
 {
     Task<IReadOnlyList<TransactionDto>> Get();
-    Task<TransactionDto> Get(string transactionIS);
+    Task<TransactionDto> Get(string transactionId);
     Task<IReadOnlyList<TransactionDto>> GetTodayTransactions();
     Task Create(TransactionDto transaction);
-    Task Remove(string transactionID);
+    Task Remove(string transactionId);
 }

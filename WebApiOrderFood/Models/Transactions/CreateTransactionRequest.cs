@@ -6,7 +6,7 @@ namespace WebApiOrderFood.Models.Transactions;
 public class CreateTransactionRequest
 {
     [Required]
-    public string OrderID { get; init; }
+    public string OrderId { get; init; }
 
     [Required]
     public TransactionType TransactionType { get; init; }

@@ -10,5 +10,5 @@ public interface IOrderRepository
     public Task<ReadOnlyCollection<OrderEntity>> Get(Func<OrderEntity, bool> predicate);
     public Task Create(OrderEntity entity);
     public Task Update(OrderEntity entity);
-    public Task Delete(string OrderID);
+    public Task Delete(string OrderId);
 }
