@@ -1,5 +1,6 @@
 ﻿using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Dtos;
+using WebApiOrderFood.BusinessLogic.Factories;
 using WebApiOrderFood.DataAccess.Entities;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
@@ -8,10 +9,20 @@ namespace WebApiOrderFood.BusinessLogic.Services;
 public class OrderService : IOrderService
 {
     private readonly IOrderRepository _orderRepository;
+    private readonly InTheEstablishmentOrderFactory _inTheEstablishmentOrderFactory;
+    private readonly ForTakeawayOrderFactory _forTakeawayOrderFactory;
+    private readonly DeliveryOrderFactory _deliveryOrderFactory;
 
-    public OrderService(IOrderRepository orderRepository)
+    public OrderService(
+            IOrderRepository orderRepository,
+            InTheEstablishmentOrderFactory inTheEstablishmentOrderFactory,
+            ForTakeawayOrderFactory forTakeawayOrderFactory,
+            DeliveryOrderFactory deliveryOrderFactory)
     {
         _orderRepository = orderRepository;
+        _inTheEstablishmentOrderFactory = inTheEstablishmentOrderFactory;
+        _forTakeawayOrderFactory = forTakeawayOrderFactory;
+        _deliveryOrderFactory = deliveryOrderFactory;
     }
 
     public async Task<IReadOnlyList<OrderDto>> Get()
@@ -48,6 +59,23 @@ public class OrderService : IOrderService
         if (order == OrderDto.Default)
             return;
 
+        IOrder newOrder;
+
+        switch (order.OrderType)
+        {
+            case OrderType.InTheEstablishment:
+                newOrder = _inTheEstablishmentOrderFactory.CreateOrder(order.OrderId, order.DishType, order.DishName, order.Amount, DateTime.UtcNow);
+                break;
+            case OrderType.ForTakeaway:
+                newOrder = _forTakeawayOrderFactory.CreateOrder(order.OrderId, order.DishType, order.DishName, order.Amount, DateTime.UtcNow);
+                break;
+            case OrderType.Delivery:
+                newOrder = _deliveryOrderFactory.CreateOrder(order.OrderId, order.DishType, order.DishName, order.Amount, DateTime.UtcNow);
+                break;
+            default:
+                throw new InvalidOperationException("Unknown order type.");
+        }
+
         await _orderRepository.Create(new OrderEntity
         {
             OrderId = order.OrderId,
@@ -81,5 +109,70 @@ public class OrderService : IOrderService
             throw new ArgumentNullException();
 
         await _orderRepository.Delete(orderId);
+    }
+
+    public async Task<OrderDto> CloneOrder(string OrderId)
+    {
+        var existingOrder = await _orderRepository.Get(OrderId);
+        if (existingOrder == null)
+            throw new InvalidOperationException($"Order with Id {OrderId} not found.");
+
+        var existingOrderDto = new OrderDto(
+            orderId: existingOrder.OrderId,
+            orderType: existingOrder.OrderType,
+            dishType: existingOrder.DishType,
+            dishName: existingOrder.DishName,
+            amount: existingOrder.Amount,
+            orderTime: existingOrder.OrderTime
+        );
+
+        IOrder cloneOrder;
+        switch (existingOrderDto.OrderType)
+        {
+            case OrderType.InTheEstablishment:
+                cloneOrder = _inTheEstablishmentOrderFactory.CreateOrder(
+                    Guid.NewGuid().ToString(),
+                    existingOrderDto.DishType,
+                    existingOrderDto.DishName,
+                    existingOrderDto.Amount,
+                    DateTime.UtcNow);
+                break;
+            case OrderType.ForTakeaway:
+                cloneOrder = _forTakeawayOrderFactory.CreateOrder(
+                    Guid.NewGuid().ToString(),
+                    existingOrderDto.DishType,
+                    existingOrderDto.DishName,
+                    existingOrderDto.Amount,
+                    DateTime.UtcNow);
+                break;
+            case OrderType.Delivery:
+                cloneOrder = _deliveryOrderFactory.CreateOrder(
+                    Guid.NewGuid().ToString(),
+                    existingOrderDto.DishType,
+                    existingOrderDto.DishName,
+                    existingOrderDto.Amount,
+                    DateTime.UtcNow);
+                break;
+            default:
+                throw new InvalidOperationException("Unknown order type.");
+        }
+
+        await _orderRepository.Create(new OrderEntity
+        {
+            OrderId = cloneOrder.OrderId,
+            OrderType = cloneOrder.OrderType,
+            DishType = cloneOrder.DishType,
+            DishName = cloneOrder.DishName,
+            Amount = cloneOrder.Amount,
+            OrderTime = cloneOrder.OrderTime
+        });
+
+        return new OrderDto(
+                cloneOrder.OrderId,
+                cloneOrder.OrderType,
+                cloneOrder.DishType,
+                cloneOrder.DishName,
+                cloneOrder.Amount,
+                cloneOrder.OrderTime);
     }
 }

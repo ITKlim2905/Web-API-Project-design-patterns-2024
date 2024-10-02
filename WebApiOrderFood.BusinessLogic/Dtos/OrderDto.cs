@@ -2,7 +2,7 @@
 
 namespace WebApiOrderFood.BusinessLogic.Dtos;
 
-public class OrderDto : IEquatable<OrderDto>
+public class OrderDto : IEquatable<OrderDto>, ICloneable
 {
     public static readonly OrderDto Default
         = new OrderDto(string.Empty, OrderType.InTheEstablishment, DishType.First, string.Empty, decimal.Zero, DateTime.MinValue);
@@ -22,6 +22,23 @@ public class OrderDto : IEquatable<OrderDto>
         DishName = dishName;
         Amount = amount;
         OrderTime = orderTime;
+    }
+
+    public OrderDto Clone()
+    {
+        return new OrderDto(
+            this.OrderId,
+            this.OrderType,
+            this.DishType,
+            this.DishName,
+            this.Amount,
+            this.OrderTime
+        );
+    }
+
+    object ICloneable.Clone()
+    {
+        return Clone();
     }
 
     public bool Equals(OrderDto? other)
