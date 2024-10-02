@@ -1,0 +1,45 @@
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.AssemblyReference.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.AssemblyInfoInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.AssemblyInfo.cs
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.CoreCompileInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.deps.json
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.CopyComplete
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\refint\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\WebApiOrderFood.DataAccess\obj\Debug\net6.0\ref\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.deps.json
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.AssemblyReference.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.AssemblyInfoInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.AssemblyInfo.cs
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.CoreCompileInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.CopyComplete
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\refint\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №1\WebApiOrderFood.DataAccess\obj\Debug\net6.0\ref\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.deps.json
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.DataAccess.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.AssemblyReference.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.AssemblyInfoInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.AssemblyInfo.cs
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.CoreCompileInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.csproj.CopyComplete
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\refint\WebApiOrderFood.DataAccess.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\WebApiOrderFood.DataAccess.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №2\WebApiOrderFood.DataAccess\obj\Debug\net6.0\ref\WebApiOrderFood.DataAccess.dll
