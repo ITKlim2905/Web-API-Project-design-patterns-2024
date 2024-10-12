@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №2\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {}
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №3\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №2\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №3\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №2\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj",
+        "projectUniqueName": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №3\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj",
         "projectName": "WebApiOrderFood.Infrastructure",
-        "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №2\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj",
+        "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №3\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №2\\WebApiOrderFood.Infrastructure\\obj\\",
+        "outputPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №3\\WebApiOrderFood.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",

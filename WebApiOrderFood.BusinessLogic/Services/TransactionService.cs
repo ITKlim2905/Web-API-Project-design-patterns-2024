@@ -1,5 +1,6 @@
 ﻿using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Dtos;
+using WebApiOrderFood.BusinessLogic.Adapters;
 using WebApiOrderFood.DataAccess.Entities;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
@@ -9,11 +10,13 @@ public class TransactionService : ITransactionService
 {
     private readonly ITransactionRepository _transactionRepository;
     private readonly IOrderRepository _orderRepository;
+    private readonly IAdapterTransactionSystem _adapterTransactionSystem;
 
-    public TransactionService(ITransactionRepository transactionRepository, IOrderRepository orderRepository)
+    public TransactionService(ITransactionRepository transactionRepository, IOrderRepository orderRepository, IAdapterTransactionSystem adapterTransactionSystem)
     {
         _transactionRepository = transactionRepository;
         _orderRepository = orderRepository;
+        _adapterTransactionSystem = adapterTransactionSystem;
     }
 
     public async Task<IReadOnlyList<TransactionDto>> Get()
@@ -65,6 +68,17 @@ public class TransactionService : ITransactionService
                 DateTime = transaction.OrderTime
             });
 
+            var transactionEntity = new TransactionEntity
+            {
+                TransactionId = transaction.TransactionId,
+                OrderId = transaction.OrderId,
+                TransactionType = transaction.Type,
+                Amount = transaction.Amount,
+                DateTime = transaction.OrderTime
+            };
+
+            _adapterTransactionSystem.ProcessAdapterTransaction(transactionEntity.TransactionId, transactionEntity.Amount, transactionEntity.OrderId);
+
             switch (transaction.Type)
             {
                 case TransactionType.Successfully:
@@ -78,6 +92,7 @@ public class TransactionService : ITransactionService
             await _orderRepository.Update(order);
         }
     }
+
 
     public async Task Remove(string transactionId)
     {

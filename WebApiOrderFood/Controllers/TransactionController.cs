@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Dtos;
-using WebApiOrderFood.DataAccess.Entities;
+using WebApiOrderFood.BusinessLogic.Facades;
 using WebApiOrderFood.Models.Transactions;
 
 namespace WebApiOrderFood.Controllers;
@@ -12,11 +12,13 @@ public class TransactionController : ControllerBase
 {
     private readonly ILogger<TransactionController> _logger;
     private readonly ITransactionService _transactionService;
+    private readonly OrderTransactionFacade _orderTransactionFacade;
 
-    public TransactionController(ILogger<TransactionController> logger, ITransactionService transactionService)
+    public TransactionController(ILogger<TransactionController> logger, ITransactionService transactionService, OrderTransactionFacade orderTransactionFacade)
     {
         _logger = logger;
         _transactionService = transactionService;
+        _orderTransactionFacade = orderTransactionFacade;
     }
 
     [HttpGet("get", Name = "GetTransaction")]
@@ -69,11 +71,19 @@ public class TransactionController : ControllerBase
     {
         var entity = new TransactionDto(Guid.NewGuid().ToString(), request.OrderId,
             request.TransactionType, request.Amount, DateTime.UtcNow);
+
+        var transactionDto = new TransactionDto(
+        Guid.NewGuid().ToString(),
+        request.OrderId,
+        request.TransactionType,
+        request.Amount,
+        DateTime.UtcNow
+        );
+
         try
         {
-
-            await _transactionService.Create(entity);
-            _logger.LogInformation($"Transaction {entity.TransactionId} successfully created");
+            await _orderTransactionFacade.CreateTransactionAndUpdateOrder(transactionDto);
+            _logger.LogInformation($"Transaction {transactionDto.TransactionId} successfully created and order updated");
             return Ok();
         }
         catch (Exception ex)
@@ -88,8 +98,8 @@ public class TransactionController : ControllerBase
     {
         try
         {
-            await _transactionService.Remove(TransactionId);
-            _logger.LogInformation($"Transaction {TransactionId} successfully deleted");
+            await _orderTransactionFacade.RemoveTransactionAndUpdateOrder(TransactionId);
+            _logger.LogInformation($"Transaction {TransactionId} successfully deleted and order updated");
             return Ok();
         }
         catch (Exception ex)
