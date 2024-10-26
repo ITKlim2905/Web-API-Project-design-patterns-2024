@@ -1,6 +1,7 @@
 using WebApiOrderFood.BusinessLogic.Installers;
 using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Services;
+using WebApiOrderFood.BusinessLogic.Adapters;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,13 @@ builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddTransient<IAdapterTransactionSystem, TransactionAdapter>();
+builder.Services.Decorate<IOrderService, OrderServiceDecorator>();
+builder.Services.Decorate<ITransactionService, TransactionServiceDecorator>();
+builder.Services.AddTransient<LegacyTransactionAdapter>();
+builder.Services.AddTransient<NewTransactionAdapter>();
+builder.Services.AddTransient<LegacyTransactionSystem>();
+builder.Services.AddTransient<NewTransactionSystem>();
 
 var app = builder.Build();
 

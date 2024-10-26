@@ -2,6 +2,7 @@
 using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Dtos;
 using WebApiOrderFood.BusinessLogic.Facades;
+using WebApiOrderFood.BusinessLogic.Adapters;
 using WebApiOrderFood.Models.Transactions;
 
 namespace WebApiOrderFood.Controllers;
@@ -13,8 +14,15 @@ public class TransactionController : ControllerBase
     private readonly ILogger<TransactionController> _logger;
     private readonly ITransactionService _transactionService;
     private readonly OrderTransactionFacade _orderTransactionFacade;
+    private readonly IAdapterTransactionSystem _adapterTransactionSystem;
 
-    public TransactionController(ILogger<TransactionController> logger, ITransactionService transactionService, OrderTransactionFacade orderTransactionFacade)
+    public TransactionController
+    (
+        ILogger<TransactionController> logger,
+        ITransactionService transactionService,
+        OrderTransactionFacade orderTransactionFacade,
+        IAdapterTransactionSystem adapterTransactionSystem
+    )
     {
         _logger = logger;
         _transactionService = transactionService;
@@ -91,6 +99,13 @@ public class TransactionController : ControllerBase
             _logger.LogError(ex, $"Failed to create transaction with Id = {entity.TransactionId}");
             return BadRequest();
         }
+    }
+
+    [HttpPost("process")]
+    public IActionResult ProcessTransaction([FromBody] CreateTransactionRequest request)
+    {
+        _adapterTransactionSystem.ProcessAdapterTransaction(request.TransactionId, request.Amount, request.OrderId);
+        return Ok("Transaction processed successfully.");
     }
 
     [HttpDelete]

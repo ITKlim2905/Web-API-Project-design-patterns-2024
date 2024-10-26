@@ -9,6 +9,9 @@ public class CreateTransactionRequest
     public string OrderId { get; init; }
 
     [Required]
+    public string TransactionId { get; init; }
+
+    [Required]
     public TransactionType TransactionType { get; init; }
 
     [Required]

@@ -1,9 +1,19 @@
-﻿namespace WebApiOrderFood.BusinessLogic.Adapters;
+﻿using Microsoft.Extensions.Logging;
 
-public class AdapterTransactionSystem : IAdapterTransactionSystem
+namespace WebApiOrderFood.BusinessLogic.Adapters
 {
-    public void ProcessAdapterTransaction(string adapterTransactionId, decimal adapterAmount, string adapterOrderId)
+    public class AdapterTransactionSystem : IAdapterTransactionSystem
     {
-        Console.WriteLine($"Adapter Transaction ID: {adapterTransactionId}, Amount: {adapterAmount}, Order ID: {adapterOrderId}");
+        private readonly ILogger<AdapterTransactionSystem> _logger;
+
+        public AdapterTransactionSystem(ILogger<AdapterTransactionSystem> logger)
+        {
+            _logger = logger;
+        }
+
+        public void ProcessAdapterTransaction(string adapterTransactionId, decimal adapterAmount, string adapterOrderId)
+        {
+            _logger.LogInformation($"Adapter Transaction ID: {adapterTransactionId}, Amount: {adapterAmount}, Order ID: {adapterOrderId}");
+        }
     }
 }

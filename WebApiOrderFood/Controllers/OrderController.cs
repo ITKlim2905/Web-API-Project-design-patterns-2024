@@ -9,10 +9,10 @@ namespace WebApiOrderFood.Controllers;
 [Route("[controller]")]
 public class OrderController : ControllerBase
 {
-    private readonly ILogger<TransactionController> _logger;
+    private readonly ILogger<OrderController> _logger;
     private readonly IOrderService _orderService;
 
-    public OrderController(ILogger<TransactionController> logger, IOrderService orderService)
+    public OrderController(ILogger<OrderController> logger, IOrderService orderService)
     {
         _logger = logger;
         _orderService = orderService;
