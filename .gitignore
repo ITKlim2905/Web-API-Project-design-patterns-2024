@@ -290,7 +290,7 @@ node_modules/
 # Visual Studio 6 auto-generated workspace file (contains which files were open etc.)
 *.vbw
 
-# Visual Studio 6 auto-generated project file (contains which files were открыты и т.д.)
+# Visual Studio 6 auto-generated project file (contains which файлы были открыты и т.д.)
 *.vbp
 
 # Visual Studio 6 workspace and project file (working project files containing files to include in project)
@@ -392,3 +392,13 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Ignore specific files
+.vs/WebApiOrderFood/v17/.suo
+WebApiOrderFood.BusinessLogic/obj/Debug/net6.0/WebApiOrderFood.BusinessLogic.csproj.AssemblyReference.cache
+WebApiOrderFood.DataAccess/obj/Debug/net6.0/WebApiOrderFood.DataAccess.csproj.AssemblyReference.cache
+
+# Additional ignores
+*.nupkg
+*.snupkg
+*.publishproj
