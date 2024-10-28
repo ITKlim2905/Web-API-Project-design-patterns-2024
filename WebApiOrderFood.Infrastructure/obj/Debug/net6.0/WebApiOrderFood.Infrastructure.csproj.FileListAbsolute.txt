@@ -46,3 +46,15 @@ C:\АКІТ-22-2\3 курс\Патерни проєктування та їх п
 C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №3\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\refint\WebApiOrderFood.Infrastructure.dll
 C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №3\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.pdb
 C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №3\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\ref\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.deps.json
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\bin\Debug\net6.0\WebApiOrderFood.Infrastructure.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.csproj.AssemblyReference.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.AssemblyInfoInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.AssemblyInfo.cs
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.csproj.CoreCompileInputs.cache
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\refint\WebApiOrderFood.Infrastructure.dll
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\WebApiOrderFood.Infrastructure.pdb
+C:\АКІТ-22-2\3 курс\Патерни проєктування та їх прикладне використання\Лабораторна робота №4\WebApiOrderFood.Infrastructure\obj\Debug\net6.0\ref\WebApiOrderFood.Infrastructure.dll

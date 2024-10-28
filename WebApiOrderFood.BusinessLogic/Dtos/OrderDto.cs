@@ -11,7 +11,8 @@ public class OrderDto : IEquatable<OrderDto>, ICloneable
     public OrderType OrderType { get; }
     public DishType DishType { get; }
     public string DishName { get; }
-    public decimal Amount { get; }
+    public decimal Amount { get; private set; }
+
     public DateTime OrderTime { get; }
 
     public OrderDto(string orderId, OrderType orderType, DishType dishType, string dishName, decimal amount, DateTime orderTime)
@@ -23,6 +24,9 @@ public class OrderDto : IEquatable<OrderDto>, ICloneable
         Amount = amount;
         OrderTime = orderTime;
     }
+
+    public void UpdateOrder(decimal amount) =>
+        Amount += amount;
 
     public OrderDto Clone()
     {

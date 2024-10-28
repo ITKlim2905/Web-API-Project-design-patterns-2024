@@ -1,6 +1,7 @@
 ﻿using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Dtos;
 using WebApiOrderFood.BusinessLogic.Factories;
+using WebApiOrderFood.BusinessLogic.Strategy;
 using WebApiOrderFood.DataAccess.Entities;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
@@ -12,17 +13,20 @@ public class OrderService : IOrderService
     private readonly InTheEstablishmentOrderFactory _inTheEstablishmentOrderFactory;
     private readonly ForTakeawayOrderFactory _forTakeawayOrderFactory;
     private readonly DeliveryOrderFactory _deliveryOrderFactory;
+    private IOrderDeliveryTypeStrategy _deliveryTypeStrategy;
 
     public OrderService(
             IOrderRepository orderRepository,
             InTheEstablishmentOrderFactory inTheEstablishmentOrderFactory,
             ForTakeawayOrderFactory forTakeawayOrderFactory,
-            DeliveryOrderFactory deliveryOrderFactory)
+            DeliveryOrderFactory deliveryOrderFactory,
+            IOrderDeliveryTypeStrategy deliveryTypeStrategy)
     {
         _orderRepository = orderRepository;
         _inTheEstablishmentOrderFactory = inTheEstablishmentOrderFactory;
         _forTakeawayOrderFactory = forTakeawayOrderFactory;
         _deliveryOrderFactory = deliveryOrderFactory;
+        _deliveryTypeStrategy = deliveryTypeStrategy;
     }
 
     public async Task<IReadOnlyList<OrderDto>> Get()
@@ -109,6 +113,20 @@ public class OrderService : IOrderService
             throw new ArgumentNullException();
 
         await _orderRepository.Delete(orderId);
+    }
+
+    public void SetOrderDeliveryTypeStartegy(IOrderDeliveryTypeStrategy deliveryTypeStrategy)
+    {
+        _deliveryTypeStrategy = deliveryTypeStrategy;
+    }
+
+    public void OrderDeliveryType(OrderDto order, decimal amount)
+    {
+        if(_deliveryTypeStrategy == null)
+        {
+            throw new InvalidOperationException("Order delivery type strategy not set.");
+        }
+        _deliveryTypeStrategy.OrderDeliveryType(order, amount);
     }
 
     public async Task<OrderDto> CloneOrder(string OrderId)

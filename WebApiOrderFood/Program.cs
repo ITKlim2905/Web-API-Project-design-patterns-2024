@@ -2,6 +2,7 @@ using WebApiOrderFood.BusinessLogic.Installers;
 using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Services;
 using WebApiOrderFood.BusinessLogic.Adapters;
+using WebApiOrderFood.BusinessLogic.Strategy;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,9 @@ builder.Services.AddTransient<LegacyTransactionAdapter>();
 builder.Services.AddTransient<NewTransactionAdapter>();
 builder.Services.AddTransient<LegacyTransactionSystem>();
 builder.Services.AddTransient<NewTransactionSystem>();
+builder.Services.AddTransient<IOrderDeliveryTypeStrategy, InTheEstablishmentOrderStrategy>();
+builder.Services.AddTransient<IOrderDeliveryTypeStrategy, ForTakeawayOrderStrategy>();
+// builder.Services.AddTransient<IOrderDeliveryTypeStrategy, DeliveryOrderStrategy>();
 
 var app = builder.Build();
 
