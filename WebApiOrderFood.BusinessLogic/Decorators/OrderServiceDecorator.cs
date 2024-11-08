@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.Extensions.Logging;
+using WebApiOrderFood.DataAccess.Entities;
 using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Dtos;
 
@@ -67,6 +68,20 @@ public class OrderServiceDecorator : IOrderService
         {
             stopwatch.Stop();
             _logger.LogInformation($"Update order executed in {stopwatch.ElapsedMilliseconds} ms");
+        }
+    }
+
+    public async Task UpdateOrderAmount(string orderId, decimal amount, TransactionType transactionType)
+    {
+        var stopwatch = Stopwatch.StartNew();
+        try
+        {
+            await _inner.UpdateOrderAmount(orderId, amount, transactionType);
+        }
+        finally
+        {
+            stopwatch.Stop();
+            _logger.LogInformation($"UpdateOrderAmount for Order ID {orderId} executed in {stopwatch.ElapsedMilliseconds} ms with amount {amount} and type {transactionType}");
         }
     }
 

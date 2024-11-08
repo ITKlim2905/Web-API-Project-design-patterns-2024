@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lapBDjrRMD0lboHuNTyfcjy/SQMBw9F546Pu9+0DJhdVgJxwqCet7Znl4bZI01DT8TJRkCifcfJmCenjhZ7/gw==",
+  "dgSpecHash": "yXmO38VpCdgaSPzS0SMD1x2nOYgDIdV3zPY4ar/N9azhAJen+d95hw2EXGVGUTSP6n0i7lMWcbXTxO44kmq3jA==",
   "success": true,
-  "projectFilePath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj",
+  "projectFilePath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №5\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

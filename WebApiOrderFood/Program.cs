@@ -3,6 +3,7 @@ using WebApiOrderFood.BusinessLogic.Contracts;
 using WebApiOrderFood.BusinessLogic.Services;
 using WebApiOrderFood.BusinessLogic.Adapters;
 using WebApiOrderFood.BusinessLogic.Strategy;
+using WebApiOrderFood.BusinessLogic.Mediator;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,10 +19,15 @@ builder.Services.AddLogging();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped(provider => new Lazy<IOrderService>(() => provider.GetRequiredService<IOrderService>()));
+builder.Services.AddScoped(provider => new Lazy<ITransactionService>(() => provider.GetRequiredService<ITransactionService>()));
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IMediator, Mediator>();
+builder.Services.AddScoped<IOrderCommandService, OrderCommandService>();
+builder.Services.AddScoped<IOrderQueryService, OrderQueryService>();
 builder.Services.AddTransient<IAdapterTransactionSystem, TransactionAdapter>();
 builder.Services.Decorate<IOrderService, OrderServiceDecorator>();
 builder.Services.Decorate<ITransactionService, TransactionServiceDecorator>();

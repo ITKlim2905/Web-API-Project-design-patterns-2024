@@ -1,4 +1,5 @@
-﻿using WebApiOrderFood.BusinessLogic.Dtos;
+﻿using WebApiOrderFood.DataAccess.Entities;
+using WebApiOrderFood.BusinessLogic.Dtos;
 
 namespace WebApiOrderFood.BusinessLogic.Contracts;
 
@@ -9,4 +10,6 @@ public interface IOrderService
     Task Add(OrderDto order);
     Task Update(OrderDto order);
     Task Remove(string orderId);
+    Task UpdateOrderAmount(string orderId, decimal amount, TransactionType transactionType);
+
 }

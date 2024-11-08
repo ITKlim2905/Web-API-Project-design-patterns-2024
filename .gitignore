@@ -1,13 +1,11 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Rider ignored files
-/.idea.WalletAPI.iml
-/projectSettingsUpdater.xml
-/modules.xml
-/contentModel.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+*.suo
+*.user
+.vs/
+[Bb]in/
+[Oo]bj/
+_UpgradeReport_Files/
+[Pp]ackages/
+
+Thumbs.db
+Desktop.ini
+.DS_Store

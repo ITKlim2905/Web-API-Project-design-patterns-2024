@@ -2,6 +2,7 @@
 using WebApiOrderFood.BusinessLogic.Dtos;
 using WebApiOrderFood.BusinessLogic.Factories;
 using WebApiOrderFood.BusinessLogic.Strategy;
+using WebApiOrderFood.BusinessLogic.Mediator;
 using WebApiOrderFood.DataAccess.Entities;
 using WebApiOrderFood.DataAccess.Repositories.Order;
 
@@ -14,19 +15,22 @@ public class OrderService : IOrderService
     private readonly ForTakeawayOrderFactory _forTakeawayOrderFactory;
     private readonly DeliveryOrderFactory _deliveryOrderFactory;
     private IOrderDeliveryTypeStrategy _deliveryTypeStrategy;
+    private IMediator _mediator;
 
     public OrderService(
             IOrderRepository orderRepository,
             InTheEstablishmentOrderFactory inTheEstablishmentOrderFactory,
             ForTakeawayOrderFactory forTakeawayOrderFactory,
             DeliveryOrderFactory deliveryOrderFactory,
-            IOrderDeliveryTypeStrategy deliveryTypeStrategy)
+            IOrderDeliveryTypeStrategy deliveryTypeStrategy,
+            IMediator mediator)
     {
         _orderRepository = orderRepository;
         _inTheEstablishmentOrderFactory = inTheEstablishmentOrderFactory;
         _forTakeawayOrderFactory = forTakeawayOrderFactory;
         _deliveryOrderFactory = deliveryOrderFactory;
         _deliveryTypeStrategy = deliveryTypeStrategy;
+        _mediator = mediator;
     }
 
     public async Task<IReadOnlyList<OrderDto>> Get()
@@ -89,6 +93,8 @@ public class OrderService : IOrderService
             Amount = order.Amount,
             OrderTime = DateTime.UtcNow
         });
+
+        await _mediator.Notify(this, "OrderCreated", order);
     }
 
     public async Task Update(OrderDto order)
@@ -105,6 +111,25 @@ public class OrderService : IOrderService
             Amount = order.Amount,
             OrderTime = DateTime.UtcNow
         });
+    }
+
+    public async Task UpdateOrderAmount(string orderId, decimal amount, TransactionType transactionType)
+    {
+        var order = await _orderRepository.Get(orderId);
+        if (order == null)
+            throw new InvalidOperationException($"Order with Id {orderId} not found.");
+
+        switch (transactionType)
+        {
+            case TransactionType.Successfully:
+                order.Amount += amount;
+                break;
+            case TransactionType.Unsuccessfully:
+                order.Amount -= amount;
+                break;
+        }
+
+        await _orderRepository.Update(order);
     }
 
     public async Task Remove(string orderId)

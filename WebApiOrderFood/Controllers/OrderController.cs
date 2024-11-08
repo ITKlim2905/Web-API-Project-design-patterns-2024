@@ -11,11 +11,21 @@ public class OrderController : ControllerBase
 {
     private readonly ILogger<OrderController> _logger;
     private readonly IOrderService _orderService;
+    private readonly IOrderQueryService _orderQueryService;
+    private readonly IOrderCommandService _orderCommandService;
 
-    public OrderController(ILogger<OrderController> logger, IOrderService orderService)
+    public OrderController
+    (
+        ILogger<OrderController> logger,
+        IOrderService orderService,
+        IOrderQueryService orderQueryService,
+        IOrderCommandService orderCommandService
+    )
     {
         _logger = logger;
         _orderService = orderService;
+        _orderQueryService = orderQueryService;
+        _orderCommandService = orderCommandService;
     }
 
     [HttpGet("get", Name = "GetOrder")]
@@ -23,7 +33,7 @@ public class OrderController : ControllerBase
     {
         try
         {
-            var result = await _orderService.Get();
+            var result = await _orderQueryService.Get();
             return Ok(result);
         }
         catch (Exception e)
@@ -38,7 +48,7 @@ public class OrderController : ControllerBase
     {
         try
         {
-            var result = await _orderService.Get(OrderId);
+            var result = await _orderQueryService.Get(OrderId);
             return Ok(result);
         }
         catch (Exception e)
@@ -60,7 +70,7 @@ public class OrderController : ControllerBase
             orderTime: DateTime.UtcNow);
         try
         {
-            await _orderService.Add(entity);
+            await _orderCommandService.Create(entity);
             _logger.LogInformation($"Order {entity.OrderId} successfully created");
             return Ok();
         }
@@ -84,7 +94,7 @@ public class OrderController : ControllerBase
 
         try
         {
-            await _orderService.Update(entity);
+            await _orderCommandService.Update(entity);
             _logger.LogInformation($"Order {entity.OrderId} successfully updated");
             return Ok();
         }
@@ -100,7 +110,7 @@ public class OrderController : ControllerBase
     {
         try
         {
-            await _orderService.Remove(OrderId);
+            await _orderCommandService.Delete(OrderId);
             _logger.LogInformation($"Order {OrderId} successfully deleted");
             return Ok();
         }

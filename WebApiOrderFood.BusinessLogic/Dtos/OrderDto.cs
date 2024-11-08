@@ -7,13 +7,13 @@ public class OrderDto : IEquatable<OrderDto>, ICloneable
     public static readonly OrderDto Default
         = new OrderDto(string.Empty, OrderType.InTheEstablishment, DishType.First, string.Empty, decimal.Zero, DateTime.MinValue);
 
-    public string OrderId { get; }
-    public OrderType OrderType { get; }
-    public DishType DishType { get; }
-    public string DishName { get; }
-    public decimal Amount { get; private set; }
+    public string OrderId { get; set; }
+    public OrderType OrderType { get; set; }
+    public DishType DishType { get; set; }
+    public string DishName { get; set; }
+    public decimal Amount { get; set; }
 
-    public DateTime OrderTime { get; }
+    public DateTime OrderTime { get; set; }
 
     public OrderDto(string orderId, OrderType orderType, DishType dishType, string dishName, decimal amount, DateTime orderTime)
     {
