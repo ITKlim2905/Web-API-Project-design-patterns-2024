@@ -1,0 +1,309 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood\\WebApiOrderFood.csproj": {}
+  },
+  "projects": {
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj",
+        "projectName": "WebApiOrderFood.BusinessLogic",
+        "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj": {
+                "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj"
+              },
+              "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {
+                "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj",
+        "projectName": "WebApiOrderFood.DataAccess",
+        "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {
+                "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj",
+        "projectName": "WebApiOrderFood.Infrastructure",
+        "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\WebApiOrderFood.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood\\WebApiOrderFood.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood\\WebApiOrderFood.csproj",
+        "projectName": "WebApiOrderFood",
+        "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood\\WebApiOrderFood.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj": {
+                "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.BusinessLogic\\WebApiOrderFood.BusinessLogic.csproj"
+              },
+              "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj": {
+                "projectPath": "C:\\АКІТ-22-2\\3 курс\\Патерни проєктування та їх прикладне використання\\Лабораторна робота №4\\WebApiOrderFood.DataAccess\\WebApiOrderFood.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Scrutor": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

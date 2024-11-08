@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "6iuTcQZsvByp+pS3WKJCmTBUELhszaa3zGicszr2cW8=",
+  "Source": "WebApiOrderFood",
+  "BasePath": "_content/WebApiOrderFood",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
