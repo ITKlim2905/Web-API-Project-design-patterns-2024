@@ -31,6 +31,19 @@ builder.Services.AddTransient<LegacyTransactionSystem>();
 builder.Services.AddTransient<NewTransactionSystem>();
 builder.Services.AddTransient<IOrderDeliveryTypeStrategy, InTheEstablishmentOrderStrategy>();
 builder.Services.AddTransient<IOrderDeliveryTypeStrategy, ForTakeawayOrderStrategy>();
+
+builder.Services.AddTransient<ServiceResolver>(serviceProvider => key =>
+{
+    switch (key)
+    {
+        case "InTheEstablishment":
+            return serviceProvider.GetRequiredService<InTheEstablishmentOrderStrategy>();
+        case "ForTakeaway":
+            return serviceProvider.GetRequiredService<ForTakeawayOrderStrategy>();
+        default:
+            throw new KeyNotFoundException($"Strategy '{key}' is not registered.");
+    }
+});
 // builder.Services.AddTransient<IOrderDeliveryTypeStrategy, DeliveryOrderStrategy>();
 
 var app = builder.Build();
